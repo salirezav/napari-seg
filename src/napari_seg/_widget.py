@@ -6,11 +6,12 @@ see: https://napari.org/plugins/guides.html?#widgets
 
 Replace code below according to your needs.
 """
+import napari
 from magicgui import magic_factory
 from qtpy.QtWidgets import QHBoxLayout, QPushButton, QWidget
 
 
-class ExampleQWidget(QWidget):
+class LoadFilesWidget(QWidget):
     # your QWidget.__init__ can optionally request the napari viewer instance
     # in one of two ways:
     # 1. use a parameter called `napari_viewer`, as done here

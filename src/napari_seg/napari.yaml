@@ -1,5 +1,5 @@
 name: napari-seg
-display_name: napari-seg-pipeline
+display_name: Napari-Seg Pipeline
 contributions:
   commands:
     - id: napari-seg.get_reader
@@ -10,27 +10,27 @@ contributions:
       title: Save multi-layer data with napari-seg-pipeline
     - id: napari-seg.write_single_image
       python_name: napari_seg._writer:write_single_image
-      title: Save image data with napari-seg-pipeline 
+      title: Save image data with napari-seg-pipeline
     - id: napari-seg.make_qwidget
-      python_name: napari_seg._widget:ExampleQWidget
+      python_name: napari_seg._widget:LoadFilesWidget
       title: Make example QWidget
     - id: napari-seg.make_magic_widget
       python_name: napari_seg._widget:example_magic_widget
       title: Make example magic widget
     - id: napari-seg.make_func_widget
       python_name: napari_seg._widget:example_function_widget
-      title: Make example function widget 
+      title: Make example function widget
   readers:
     - command: napari-seg.get_reader
-      accepts_directories: false
-      filename_patterns: ['*.npy'] 
+      accepts_directories: true
+      filename_patterns: []
   writers:
     - command: napari-seg.write_multiple
-      layer_types: ['image*','labels*']
+      layer_types: ["image*", "labels*"]
       filename_extensions: []
     - command: napari-seg.write_single_image
-      layer_types: ['image']
-      filename_extensions: ['.npy'] 
+      layer_types: ["image"]
+      filename_extensions: [".npy"]
   widgets:
     - command: napari-seg.make_qwidget
       display_name: Example QWidget
@@ -38,4 +38,4 @@ contributions:
       display_name: Example Magic Widget
     - command: napari-seg.make_func_widget
       autogenerate: true
-      display_name: Example Function Widget 
+      display_name: Example Function Widget

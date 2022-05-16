@@ -1,5 +1,6 @@
 import numpy as np
-from napari_seg import ExampleQWidget, example_magic_widget
+
+from napari_seg import LoadFilesWidget, example_magic_widget
 
 
 # make_napari_viewer is a pytest fixture that returns a napari viewer object
@@ -10,7 +11,7 @@ def test_example_q_widget(make_napari_viewer, capsys):
     viewer.add_image(np.random.random((100, 100)))
 
     # create our widget, passing in the viewer
-    my_widget = ExampleQWidget(viewer)
+    my_widget = LoadFilesWidget(viewer)
 
     # call our widget method
     my_widget._on_click()
@@ -18,6 +19,7 @@ def test_example_q_widget(make_napari_viewer, capsys):
     # read captured output and check that it's as we expected
     captured = capsys.readouterr()
     assert captured.out == "napari has 1 layers\n"
+
 
 def test_example_magic_widget(make_napari_viewer, capsys):
     viewer = make_napari_viewer()
